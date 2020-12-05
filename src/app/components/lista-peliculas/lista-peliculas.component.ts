@@ -9,19 +9,23 @@ import { Movie } from '../../models/movie.model';
 export class ListaPeliculasComponent implements OnInit {
 
   public peliculas: Movie[] = [];
+  public searchQuery:string;
   constructor(private peliculasService:PeliculasService) {
-    this.getPeliculas('frozen');
-
-   }
+   
+  }
 
   ngOnInit(): void {
   }
 
   getPeliculas(query:string){
     this.peliculasService.getMovieByQuery(query).subscribe((data:any)=>{
+      console.log(data.results)
       this.peliculas = data.results;
     });
   }
-
+  
+  onCancel(){
+    this.peliculas = [];
+  }
 
 }

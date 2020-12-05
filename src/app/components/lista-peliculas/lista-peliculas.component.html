@@ -1,8 +1,22 @@
-<ion-searchbar></ion-searchbar>
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button></ion-back-button>
+        </ion-buttons>
+        <ion-title>MOVIES APP</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-searchbar (ionClear)="onCancel()" (ionInput)="getPeliculas($event.target.value)" autocorrect="off"></ion-searchbar>
 <ion-grid>
-    <ion-card *ngFor="let pelicula of peliculas">
-        <ion-card-header>
-            <img width="100" src="https://image.tmdb.org/t/p/w500{{pelicula.poster_path}}" /> {{ pelicula.original_title }}
-        </ion-card-header>
-    </ion-card>
+    <ion-row>
+        <ion-col size="2" *ngFor="let pelicula of peliculas">
+            <ion-card>
+                <ion-card-header> <img width="auto" src="https://image.tmdb.org/t/p/w500{{pelicula.poster_path}}" />
+                    <h3>{{ pelicula.original_title }}</h3>
+                </ion-card-header>
+            </ion-card>
+
+        </ion-col>
+    </ion-row>
 </ion-grid>
