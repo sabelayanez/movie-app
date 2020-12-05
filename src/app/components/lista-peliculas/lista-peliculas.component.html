@@ -1,0 +1,8 @@
+<ion-searchbar></ion-searchbar>
+<ion-grid>
+    <ion-card *ngFor="let pelicula of peliculas">
+        <ion-card-header>
+            <img width="100" src="https://image.tmdb.org/t/p/w500{{pelicula.poster_path}}" /> {{ pelicula.original_title }}
+        </ion-card-header>
+    </ion-card>
+</ion-grid>
