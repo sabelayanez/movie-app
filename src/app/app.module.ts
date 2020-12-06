@@ -4,13 +4,17 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { IonicModule } from '@ionic/angular';
-import { ListaPeliculasComponent } from './components/lista-peliculas/lista-peliculas.component';
+import { ListMoviesComponent } from './components/list-movies/list-movies.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
-import {PeliculasService} from './services/peliculas.service';
+import { MoviesService} from './services/movies.service';
+import { DetailMovieComponent } from './components/detail-movie/detail-movie.component';
+import { HeaderComponent } from './components/includes/header/header.component';
 @NgModule({
   declarations: [
     AppComponent,
-    ListaPeliculasComponent
+    ListMoviesComponent,
+    DetailMovieComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
@@ -20,7 +24,7 @@ import {PeliculasService} from './services/peliculas.service';
     HttpClientModule
   ],
   providers: [
-    PeliculasService,
+    moviesService,
     HttpClient,
     
   ],

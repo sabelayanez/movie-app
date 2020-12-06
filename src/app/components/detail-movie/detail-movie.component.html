@@ -1,0 +1,22 @@
+<ion-content overflow-scroll="true">
+    <app-header></app-header>
+    <ion-card *ngIf="movie">
+        <ion-card-title class="ion-padding">
+            {{movie.title}}
+        </ion-card-title>
+        <ion-card-content>
+            <ion-row>
+                <ion-col size="3">
+                    <img width="auto" src="https://image.tmdb.org/t/p/w300{{movie.poster_path}}" />
+                </ion-col>
+                <ion-col size="9">
+                    <strong>Sinopsis</strong>
+                    <p>{{movie.overview}}</p>
+                    <strong>Género</strong>
+                    <p><span *ngFor="let genre of movie.genres">{{genre.name}}  </span></p>
+                </ion-col>
+            </ion-row>
+        </ion-card-content>
+
+    </ion-card>
+</ion-content>
