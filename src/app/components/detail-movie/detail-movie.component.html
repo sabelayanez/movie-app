@@ -1,5 +1,6 @@
 <ion-content overflow-scroll="true">
     <app-header></app-header>
+    <ion-button color="secondary ion-margin" (click)="return()">Atrás</ion-button>
     <ion-card *ngIf="movie">
         <ion-card-title class="ion-padding">
             {{movie.title}}
@@ -14,6 +15,14 @@
                     <p>{{movie.overview}}</p>
                     <strong>Género</strong>
                     <p><span *ngFor="let genre of movie.genres">{{genre.name}}  </span></p>
+                    <strong>Año</strong>
+                    <p>{{movie.release_date | date: 'dd/MM/yyyy'}}</p>
+                    <strong>Idioma original</strong>
+                    <p>{{movie.original_language}}</p>
+                    <strong>Valoración media</strong>
+                    <p>{{movie.vote_average}}</p>
+                    <strong *ngIf="movie.video">Trailer: </strong>
+                    <p *ngIf="movie.video">{{movie.video}}</p>
                 </ion-col>
             </ion-row>
         </ion-card-content>

@@ -1,15 +1,13 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
-
+import { AppConstants } from '../app.constants';
 @Injectable({
   providedIn: 'root'
 })
 export class MoviesService {
 
-  searchUrl  = 'https://api.themoviedb.org/3/search/movie';
-  detailUrl  = 'https://api.themoviedb.org/3/movie/';
-  apiKey     = '6a54634a0e5137683c5d79bc11c7a008';
-  language   = 'es-ES';
+  searchUrl  = AppConstants.BASE_URL + 'search/movie';
+  detailUrl  = AppConstants.BASE_URL + 'movie/';
 
   constructor(private http:HttpClient) { }
 
@@ -19,8 +17,8 @@ export class MoviesService {
     };
     return this.http.get(this.searchUrl, {
       params:{
-        api_key: this.apiKey,
-        language: this.language,
+        api_key: AppConstants.API_KEY,
+        language: AppConstants.LANGUAGE,
         query:query
       }
     });
@@ -32,8 +30,8 @@ export class MoviesService {
     };
     return this.http.get(this.detailUrl + movie_id, {
       params:{
-        api_key: this.apiKey,
-        language: this.language,
+        api_key: AppConstants.API_KEY,
+        language: AppConstants.LANGUAGE,
       }
     });
   }

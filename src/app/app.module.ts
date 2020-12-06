@@ -24,7 +24,7 @@ import { HeaderComponent } from './components/includes/header/header.component';
     HttpClientModule
   ],
   providers: [
-    moviesService,
+      MoviesService,
     HttpClient,
     
   ],
