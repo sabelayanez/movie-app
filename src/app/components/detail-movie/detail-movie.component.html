@@ -8,7 +8,9 @@
         <ion-card-content>
             <ion-row>
                 <ion-col size="3">
-                    <img width="auto" src="https://image.tmdb.org/t/p/w300{{movie.poster_path}}" />
+                    <img *ngIf="movie.poster_path" width="auto" src="https://image.tmdb.org/t/p/w300{{movie.poster_path}}" />
+                    <img *ngIf="!movie.poster_path" width="200px" src="assets/images/error.png" />
+
                 </ion-col>
                 <ion-col size="9">
                     <strong>Título original</strong>
