@@ -1,6 +1,6 @@
 <ion-content overflow-scroll="true">
     <app-header></app-header>
-    <ion-searchbar (ionClear)="onCancel()" (ionInput)="getmovies($event.target.value)" autocorrect="off"></ion-searchbar>
+    <ion-searchbar (ionClear)="onCancel()" placeholder="Encuentra películas..." (ionInput)="getmovies($event.target.value)" autocorrect="off"></ion-searchbar>
     <ion-list>
         <ion-list-header *ngIf="movies.length!=0">
             Resultados

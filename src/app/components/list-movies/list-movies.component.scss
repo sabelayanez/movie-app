@@ -1,5 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
 ion-card {
     padding: 20px;
     margin-right: 10px;
     margin-left: 10px;
+}
+
+.searchbar-input-container {
+    font-family: 'Montserrat', sans-serif;
+    --border-color: white;
 }
