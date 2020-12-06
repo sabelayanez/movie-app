@@ -18,7 +18,7 @@
                     <strong *ngIf="movie.genres">Género</strong>
                     <p><span *ngFor="let genre of movie.genres">{{genre.name}}  </span></p>
                     <strong>Año</strong>
-                    <p>{{movie.release_date | date: 'dd/MM/yyyy'}}</p>
+                    <p>{{movie.release_date | date: 'yyyy'}}</p>
                     <strong *ngIf="movie.spoken_languages">Idiomas</strong>
                     <p *ngFor="let lang of movie.spoken_languages">{{lang.name}}</p>
                     <strong>Valoración media</strong>
