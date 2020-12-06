@@ -17,6 +17,10 @@ export class Movie {
     popularity: number
     poster_path: string
     release_date: Date
+    spoken_languages: {
+        iso_639_1:string
+        name:string
+    }
     status:string
     tagline:string
     title: string
